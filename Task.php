@@ -1,11 +1,11 @@
 <?php
-
-
 namespace Jim;
 
+require 'Model.php';
 
 class Task extends Model
 {
+	protected $table = 'tasks';
 	protected $id;
 	protected $subject;
 	protected $description;

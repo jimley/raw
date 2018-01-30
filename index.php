@@ -1,5 +1,6 @@
 <?php
 require_once 'DbConn.php';
+require_once 'Task.php';
 
 $sql = 'select * from tasks';
 $conn = \Jim\DbConn::conn();
@@ -17,5 +18,9 @@ if($result = $conn->query($sql2)) {
 		var_dump($row->migration);
 	}
 }
+
+$task = new \Jim\Task($conn);
+
+var_dump($task->getAll());
 
 $conn->close();
